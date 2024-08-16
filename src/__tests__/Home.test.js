@@ -22,10 +22,11 @@ test("Displays a list of movie titles", async () =>{
 
 test("Displays links for each associated movie", async () =>{
   render(<RouterProvider router={router}/>);
-  const linkList = await screen.findAllByText(/View Info/);
+  const linkList = await screen.findAllByText(/View Details/);
   expect(linkList.length).toBeGreaterThan(2);
   expect(linkList[0].href).toBe("http://localhost/movie/1");
-})
+});
+
 
 test("renders the <NavBar /> component", () => {
   const router = createMemoryRouter(routes)
